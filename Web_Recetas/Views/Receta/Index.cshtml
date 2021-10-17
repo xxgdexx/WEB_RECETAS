@@ -1,1 +1,187 @@
-﻿
+﻿<!-- Container Fluid-->
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">RECETAS</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">RECETAS </li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <!-- General Colors-->
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Entradas</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    Nombre
+                                    <div class="text-white-50 small">Descripción</div>
+                                </div>
+                            </div>
+                            <button id="btnListar" class="btn btn-success">Listar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- sopas -->
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Sopas</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    Nombre
+                                    <div class="text-white-50 small">Descripción</div>
+                                </div>
+                            </div>
+                            <button id="btnListar" class="btn btn-success">Listar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- sopas -->
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Platos de fondo</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    Nombre
+                                    <div class="text-white-50 small">Descripción</div>
+                                </div>
+                            </div>
+                            <button id="btnListar" class="btn btn-success">Listar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- sopas -->
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Platos de Postres</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    Nombre
+                                    <div class="text-white-50 small">Descripción</div>
+                                </div>
+                            </div>
+                            <button id="btnListar" class="btn btn-success">Listar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- sopas -->
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Bebidas</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    Nomre
+                                    <div class="text-white-50 small">Descripción</div>
+                                </div>
+                            </div>
+                            <button id="btnListar" class="btn btn-success">Listar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal Logout -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                    <a href="login.html" class="btn btn-primary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Row-->
+</div>
+<!---Container Fluid-->
+<script>
+
+    $("#btnListar").click(function () {
+        alert("OK");
+        debugger;
+        let ruta = "https://localhost:44337/api/Receta/GetReceta";
+
+      
+        $.ajax({
+            //async: true,
+            type: 'GET',
+            url: ruta,
+            data: { },
+           // dataType: 'html', //dataType - html
+            dataType: 'JSON',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                alert("Listo");
+            },
+            error: function (msg) {
+                alert(msg.responseText);
+            }
+        });
+
+    })
+
+
+    function GetRecetas() {
+      
+       
+    }
+
+</script>

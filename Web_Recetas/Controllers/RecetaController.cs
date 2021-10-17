@@ -11,6 +11,7 @@ namespace Web_Recetas.Controllers
         // GET: Receta
         public ActionResult Index()
         {
+
             return PartialView();
         }
     }
