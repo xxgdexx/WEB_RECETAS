@@ -14,5 +14,11 @@ namespace Web_Recetas.Controllers
 
             return PartialView();
         }
+
+
+        public ActionResult Mantenimiento()
+        {
+            return PartialView();
+        }
     }
 }

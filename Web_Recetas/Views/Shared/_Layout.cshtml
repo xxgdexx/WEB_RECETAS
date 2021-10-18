@@ -88,6 +88,23 @@
                 </a>
 
             </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRecetas" aria-expanded="false" aria-controls="collapseRecetas">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Recetas</span>
+                </a>
+                <div id="collapseRecetas" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar" style="">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Funciones</h6>
+                        <a class="collapse-item" onclick="AbrirMenu('Receta', 'Index')" href="javascript:void(0)" >Recetas</a>
+                        <a class="collapse-item" onclick="AbrirMenu('Receta', 'Mantenimiento')" href="javascript:void(0)">Mantenimieno</a>
+                    </div>
+                </div>
+            </li>
+
+
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
                 Examples
@@ -347,6 +364,11 @@
     <script src="~/Assets/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="~/Assets/js/ruang-admin.min.js"></script>
     <script src="~/Assets/vendor/chart.js/Chart.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="~/Scripts/admApp.js"></script>
+
+
     @*<script src="~/Assets/js/demo/chart-area-demo.js"></script>*@
 
 
