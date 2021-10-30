@@ -11,87 +11,89 @@
     <div class="col-12">
 
 
-        <div class="card mb-4 row">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between col-12">
-                <h6 class="m-0 font-weight-bold text-primary">Mantenimiento</h6>
+        <div class="card mb-4 py-3 row">
+           
+            <div class="col-12 row">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between col-lg-6">
+                    <h6 class="m-0 font-weight-bold text-primary">Mantenimiento</h6>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-end row">
+                    <button class="btn btn-danger mr-3" onclick="btnAction('cancelar')">Cancelar</button>
+                    <button class="btn btn-success mr-3" onclick="btnAction('registrar')">Registrar</button>
+                </div>
             </div>
             <div class="card-body row col-12">
 
                 <div class="form-group row col-6">
                     <label for="ID_Receta" class="col-sm-3 col-form-label">ID_Receta</label>
                     <div class="col-sm-9">
-                        <input type="tel" class="form-control" data-field="Nombre" id="ID_Receta" disabled readonly>
+                        <input type="tel" class="form-control cf" data-field="ID_Receta" id="ID_Receta" disabled readonly>
                     </div>
                 </div>
 
                 <div class="form-group row col-6">
                     <label for="Nombre" class="col-sm-3 col-form-label">Nombre Receta</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" data-field="Nombre" id="Nombre" placeholder="Nombre de Receta">
+                        <input type="text" class="form-control cf" data-field="Nombre" id="Nombre" placeholder="Nombre de Receta">
                     </div>
                 </div>
 
                 <div class="form-group row col-6">
                     <label for="Descripcion" class="col-sm-3 col-form-label">Descripcion</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="Descripcion" placeholder="Escribir una breve descripcion">
+                        <input type="text" class="form-control cf" data-field="Descripcion" placeholder="Escribir una breve descripcion">
                     </div>
                 </div>
 
                 <div class="form-group row col-6">
                     <label for="Preparacion" class="col-sm-3 col-form-label">Preparacion</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="Preparacion" placeholder="Escribir la preparación a detalle">
+                        <input type="text" class="form-control cf" data-field="Preparacion" placeholder="Escribir la preparación a detalle">
                     </div>
                 </div>
 
-                <div class="form-group row col-6">
-                    <label for="Foto" class="col-sm-3 col-form-label">Foto</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="Foto" placeholder="Foto">
-                    </div>
-                </div>
+
 
                 <div class="form-group row col-6">
                     <label for="Tips" class="col-sm-3 col-form-label">Tips</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="Tips" placeholder="Tips de la receta">
+                        <input type="text" class="form-control cf" data-field="Tips" placeholder="Tips de la receta">
                     </div>
                 </div>
 
                 <div class="form-group row col-6">
                     <label for="CantidadPersonas" class="col-sm-3 col-form-label">Para:</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="CantidadPersonas" placeholder="Para cuantas personas">
+                        <input type="text" class="form-control cf" data-field="CantidadPersonas" placeholder="Para cuantas personas">
                     </div>
                 </div>
 
                 <div class="form-group row col-6">
                     <label for="TiempoPreparacion" class="col-sm-3 col-form-label">Tiempo</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="TiempoPreparacion" placeholder="Tiempo de Preparacion">
+                        <input type="text" class="form-control cf"  data-field="TiempoPreparacion" placeholder="Tiempo de Preparacion">
                     </div>
                 </div>
 
                 <div class="form-group row col-6">
                     <label for="UrlVideo" class="col-sm-3 col-form-label">UrlVideo</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="UrlVideo" placeholder="Enlace de video">
+                        <input type="text" class="form-control cf" data-field="UrlVideo" placeholder="Enlace de video">
                     </div>
                 </div>
 
 
                 <div class="form-group row col-6">
-                    <label for="ID_Categoria" class="col-sm-3 col-form-label">ID_Categoria</label>
+                    <label for="ID_Categoria" class="col-sm-3 col-form-label">Categoria</label>
                     <div class="col-sm-9">
-                        <select class="form-control" id="ID_Categoria"></select>
+                        <select class="form-control cf" id="ID_Categoria" data-field="ID_Categoria"></select>
                     </div>
                 </div>
 
                 <div class="form-group row col-6">
-                    <label for="ID_Dificultad" class="col-sm-3 col-form-label">ID_Dificultad</label>
+                    <label for="ID_Dificultad" class="col-sm-3 col-form-label">Dificultad</label>
                     <div class="col-sm-9">
-                        <select class="form-control" id="ID_Dificultad"></select>
+                        <select class="form-control cf" id="ID_Dificultad" data-field="ID_Dificultad"></select>
                     </div>
 
 
@@ -100,18 +102,30 @@
 
 
                 <div class="form-group row col-6">
-                    <label for="ID_Estilo" class="col-sm-3 col-form-label">ID_Estilo</label>
+                    <label for="ID_Estilo" class="col-sm-3 col-form-label">Estilo</label>
                     <div class="col-sm-9">
-                        <select class="form-control" id="ID_Estilo"></select>
+                        <select class="form-control cf" id="ID_Estilo" data-field="ID_Estilo"></select>
                     </div>
                 </div>
 
 
                 <div class="form-group row col-6">
-                    <label for="ID_Ocasion" class="col-sm-3 col-form-label">ID_Ocasion</label>
+                    <label for="ID_Ocasion" class="col-sm-3 col-form-label">Ocasion</label>
                     <div class="col-sm-9">
-                        <select class="form-control" id="ID_Ocasion"></select>
+                        <select class="form-control cf" id="ID_Ocasion" data-field="ID_Ocasion"></select>
                     </div>
+                </div>
+
+
+                <div class="form-group row col-6">
+                    <label for="Foto" class="col-sm-3 col-form-label">Foto</label>
+                    <div class="col-sm-9">
+                        <input type="file" class="form-control" id="Foto" placeholder="Foto">
+                    </div>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center py-3 bg-warning">
+                    <img class="cf" data-field="Foto" id="ImagenRef" src="~/Assets/img/MENU CHU.png" style="height:300px;width:450px;" />
                 </div>
 
 

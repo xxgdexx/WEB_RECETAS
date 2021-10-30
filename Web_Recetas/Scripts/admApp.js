@@ -54,3 +54,6 @@ function Lista(data, combo, obj,select) {
     }
     $("#" + combo + "").html(str);
 }
+
+
+

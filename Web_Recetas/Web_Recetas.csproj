@@ -125,6 +125,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataAccess.cs" />
+    <Compile Include="Models\Extensiones.cs" />
+    <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +137,7 @@
     <Content Include="Assets\buttons.html" />
     <Content Include="Assets\charts.html" />
     <Content Include="Assets\copycontent.html" />
+    <Content Include="Assets\css\estilo-login.css" />
     <Content Include="Assets\css\ruang-admin.css" />
     <Content Include="Assets\css\ruang-admin.min.css" />
     <Content Include="Assets\datatables.html" />
@@ -148,6 +152,7 @@
     <Content Include="Assets\img\logo\logo.png" />
     <Content Include="Assets\img\logo\logo2.png" />
     <Content Include="Assets\img\man.png" />
+    <Content Include="Assets\img\MENU CHU.png" />
     <Content Include="Assets\img\screenshot\ss2.png" />
     <Content Include="Assets\img\think.svg" />
     <Content Include="Assets\img\undraw_posting_photo.svg" />
@@ -2274,6 +2279,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Receta\Mantenimiento.js" />
     <Content Include="Scripts\Receta\Receta.js" />
+    <Content Include="Scripts\Seguridad\Authenticar.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2290,10 +2296,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Receta\Index.cshtml" />
     <Content Include="Views\Receta\Mantenimiento.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
