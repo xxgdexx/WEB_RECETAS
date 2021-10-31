@@ -131,20 +131,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\404.html" />
-    <Content Include="Assets\alerts.html" />
-    <Content Include="Assets\blank.html" />
-    <Content Include="Assets\buttons.html" />
-    <Content Include="Assets\charts.html" />
-    <Content Include="Assets\copycontent.html" />
     <Content Include="Assets\css\estilo-login.css" />
     <Content Include="Assets\css\ruang-admin.css" />
     <Content Include="Assets\css\ruang-admin.min.css" />
-    <Content Include="Assets\datatables.html" />
-    <Content Include="Assets\dropdowns.html" />
     <Content Include="Assets\font\OFL.txt" />
-    <Content Include="Assets\form_advanceds.html" />
-    <Content Include="Assets\form_basics.html" />
     <Content Include="Assets\img\boy.png" />
     <Content Include="Assets\img\error.svg" />
     <Content Include="Assets\img\girl.png" />
@@ -153,22 +143,19 @@
     <Content Include="Assets\img\logo\logo2.png" />
     <Content Include="Assets\img\man.png" />
     <Content Include="Assets\img\MENU CHU.png" />
+    <Content Include="Assets\img\Menus\Caldo_sopa.jpg" />
+    <Content Include="Assets\img\Menus\causa_entrada.jpg" />
+    <Content Include="Assets\img\Menus\flan_postre.jpg" />
+    <Content Include="Assets\img\Menus\limonada_bebida.jpg" />
+    <Content Include="Assets\img\Menus\lomo_fondo.jpg" />
     <Content Include="Assets\img\screenshot\ss2.png" />
     <Content Include="Assets\img\think.svg" />
     <Content Include="Assets\img\undraw_posting_photo.svg" />
-    <Content Include="Assets\index.html" />
     <Content Include="Assets\js\demo\chart-area-demo.js" />
     <Content Include="Assets\js\demo\chart-bar-demo.js" />
     <Content Include="Assets\js\demo\chart-pie-demo.js" />
     <Content Include="Assets\js\ruang-admin.js" />
     <Content Include="Assets\js\ruang-admin.min.js" />
-    <Content Include="Assets\login.html" />
-    <Content Include="Assets\modals.html" />
-    <Content Include="Assets\popovers.html" />
-    <Content Include="Assets\progress-bar.html" />
-    <Content Include="Assets\register.html" />
-    <Content Include="Assets\simple-tables.html" />
-    <Content Include="Assets\ui-colors.html" />
     <Content Include="Assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker.css" />
     <Content Include="Assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker.min.css" />
     <Content Include="Assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css" />
@@ -2082,8 +2069,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Assets\font\Nunito-Regular.ttf" />
     <Content Include="Assets\img\logo\logo.ai" />
-    <Content Include="Assets\LICENSE" />
-    <Content Include="Assets\README.md" />
     <Content Include="Assets\scss\navs\_global.scss" />
     <Content Include="Assets\scss\navs\_sidebar.scss" />
     <Content Include="Assets\scss\navs\_topbar.scss" />

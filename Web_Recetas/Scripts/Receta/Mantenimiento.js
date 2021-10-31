@@ -1,4 +1,6 @@
-﻿
+﻿var titulo = 'ID_Receta,Nombre,Descripcion';
+var bdy = 'ID_Receta,Nombre,Descripcion';
+
 //DataCategoria();
 //function DataCategoria() {
 //    axiosCon('GET', 'Categoria', mostrarCategoria);
@@ -8,13 +10,28 @@
 var img64 = "";
 
 var Foto = document.getElementById("Foto");
+
 GetListas();
+init();
+
+function init() {
+
+    axiosCon('GET', 'Receta', listaReceta);
+}
+
 function GetListas() {
     GetData("Categoria", listaCategoria);
     GetData("Estilo", listaEstilo);
     GetData("Dificultad", listaDificultad);
     GetData("Ocasion", listaOcasion);
 }
+
+function listaReceta(res) {
+    console.log(res);
+    data = res.data.Lista;
+    llenarTable(data, "ID_Receta");
+}
+
 Foto.onchange = function (evt) {
     var img = document.getElementById("ImagenRef");
     var tgt = evt.target || window.event.srcElement,
@@ -79,28 +96,55 @@ function listaOcasion(r) {
     }
 }
 
+function btnAction(pt,accion) {
 
-function btnAction(accion) {
+    var id;
+    if (accion != 'nuevo' || accion != 'cancelar') {
+        id = pt.parentNode.parentNode.id;
+    }
 
-    axios.post(BaseUrl+"Receta", assignValues()).then(res => {
-        if (res.data.Resultado === "OK") {
-            Swal.fire('OK', res.data.Mensaje, 'success');
+    switch (accion) {
+
+        case 'registrar':
+            axios.post(BaseUrl + "Receta", assignValues()).then(res => {
+                if (res.data.Resultado === "OK") {
+                    Swal.fire('OK', res.data.Mensaje, 'success');
+                }
+                else {
+                    Swal.fire('Error', res.data.Mensaje, 'error');
+                }
+            }).catch(err => {
+                Swal.fire('Error', err.toString(), 'error');
+            });
+            break;
+
+        case 'editar':
+            LimpiarCampos();
+            //$("#TittleModel").html("Editar Modelo");
+            $("#rowTable").hide(500);
+            $("#rowData").show(1000);
 
 
 
-            //$("#rowData").hide(500);
-            //$("#rowTable").show(1000);
-            //listarModelo(res);
-        }
-        else {
-            Swal.fire('Error', res.data.Mensaje, 'error');
-        }
-    }).catch(err => {
-        Swal.fire('Error', err.toString(), 'error');
-    });
+            axiosCon('GET', 'Receta?id=' + id, llenarCampos);
+
+
+            break;
+
+        case 'cancelar':
+            console.log("Ingreso a cancelar");
+            $("#rowData").hide(500);
+            $("#rowTable").show(1000);
+            break;
+        case 'nuevo':
+            LimpiarCampos();
+            $("#rowTable").hide(500);
+            $("#rowData").show(1000);
+            break;
+    }
+
+
 }
-
-
 
 function assignValues() {
     //Objeto retorno
@@ -131,7 +175,54 @@ function assignValues() {
 
     });
     console.log(obj);
-
+    obj["ID_Usuario"] = JSON.parse(localStorage.getItem("Usuario")).ID_Usuario;
     return obj;
 }
 
+function LimpiarCampos() {
+    $(".cf").each(function (index) {
+
+        switch ($(this)[0].localName) {
+            case "select":
+                $(this)[0].value = "";
+                break;
+            case "input": case "textarea":
+                $(this)[0].value = "";
+                break;
+            case "img":
+                img64 = "";
+                $(this)[0].src = "";
+
+
+                break;
+            default:
+        }
+
+    });
+}
+
+
+function llenarCampos(reg) {
+    console.log(reg.data);
+    var obj = reg.data.Lista[0];
+    $(".cf").each(function (index) {
+        switch ($(this)[0].localName) {
+            case "select":
+                $(this).val(obj[$(this).data("field")]);
+                break;
+            case "input": case "textarea":
+                $(this).val(obj[$(this).data("field")]);
+                break;
+            case "img":
+                if (obj[$(this).data("field")] === "") {
+                    $(this).attr("src", "./Assets/img/MENU CHU.png");
+                }
+                else {
+                    img64 = JSON.parse(obj[$(this).data("field")]).base64;
+                    $(this).attr("src", img64);
+                }
+                break;
+            default:
+        }
+    });
+}

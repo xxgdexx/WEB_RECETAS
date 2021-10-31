@@ -35,6 +35,8 @@ function rpta(r) {
     console.log(r.data);
     let x = r.data;
 
+    localStorage.removeItem("Usuario");
+
     if (x.ID_Usuario==0) {
         Swal.fire('Error', "Correo u/o Clave no encontrada", 'error');
     } else{

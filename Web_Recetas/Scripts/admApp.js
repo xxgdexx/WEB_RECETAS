@@ -1,6 +1,6 @@
 ﻿var BaseUrl = "https://localhost:44337/api/";
 
-
+var logout = document.getElementById("logout");
 
 function axiosCon(t, u, m) {
     var axiosConfig = {
@@ -32,6 +32,11 @@ function axiosCon(t, u, m) {
 
 
 
+
+logout.onclick = () => {
+    localStorage.removeItem("Usuario");
+    console.log("salir");
+}
 //const DataGet = (ApiController) => {
 //    axiosCon('GET', ApiController, (r) => {
 //        console.log(r);
@@ -54,6 +59,72 @@ function Lista(data, combo, obj,select) {
     }
     $("#" + combo + "").html(str);
 }
+
+
+
+
+function llenarTable(dat, rId) {
+    let obj = [];
+    let d = titulo.split(",");
+    let b = bdy.split(",");
+    for (i = 0; i < d.length; i++) {
+        //console.log(d[i]);
+        obj.push({ title: d[i], data: b[i] });
+    }
+    //console.log(vista);
+
+    obj.push({
+        data: null,
+        className: "text-center",
+        defaultContent: `<button onclick=btnAction(this,"editar") class="bg-warning px-1 py-0 btn text-white rounded rounded-circle"><i class="fa fa-pencil-alt"></i></button>`,
+        orderable: false
+    });
+
+    $("#dtp").DataTable({
+        destroy: true,
+        data: dat,
+        rowId: rId,
+        columns: obj,
+        columnDefs:
+            [
+                {
+                    "targets": 0,
+                    "visible": false,
+                },
+                {
+                    "targets": obj.length - 1,
+                    "width": "10%"
+                }],
+        searching: !0,
+        bLengthChange: !1,
+        destroy: !0,
+        info: !1,
+        paging: !1,
+        responsive: !0,
+        footer: false,
+        deferRender: !1,
+        //"language": {
+        //    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        //},
+        searching: !0,
+        bLengthChange: !1,
+        destroy: !0,
+        info: !1,
+        paging: !1,
+        responsive: !0,
+        footer: false,
+        deferRender: !1,
+        language: {
+            search: "_INPUT_",
+            searchPlaceholder: "Buscar..."
+        }
+    });
+
+
+
+};
+
+
 
 
 
