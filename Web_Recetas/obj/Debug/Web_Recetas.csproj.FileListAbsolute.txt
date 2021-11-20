@@ -335,8 +335,6 @@ D:\Ciclo 6\DAMII\PROYECTO_V6\WEB_RECETAS\Web_Recetas\bin\es\System.Web.Razor.res
 D:\Ciclo 6\DAMII\PROYECTO_V6\WEB_RECETAS\Web_Recetas\bin\es\System.Web.WebPages.resources.dll
 D:\Ciclo 6\DAMII\PROYECTO_V6\WEB_RECETAS\Web_Recetas\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\Ciclo 6\DAMII\PROYECTO_V6\WEB_RECETAS\Web_Recetas\bin\es\System.Web.WebPages.Razor.resources.dll
-D:\Ciclo 6\DAMII\PROYECTO_V6\WEB_RECETAS\Web_Recetas\obj\Debug\Web_Recetas.csproj.AssemblyReference.cache
 D:\Ciclo 6\DAMII\PROYECTO_V6\WEB_RECETAS\Web_Recetas\obj\Debug\Web_Recetas.csproj.CoreCompileInputs.cache
-D:\Ciclo 6\DAMII\PROYECTO_V6\WEB_RECETAS\Web_Recetas\obj\Debug\Web_Recetas.csproj.CopyComplete
 D:\Ciclo 6\DAMII\PROYECTO_V6\WEB_RECETAS\Web_Recetas\obj\Debug\Web_Recetas.dll
 D:\Ciclo 6\DAMII\PROYECTO_V6\WEB_RECETAS\Web_Recetas\obj\Debug\Web_Recetas.pdb

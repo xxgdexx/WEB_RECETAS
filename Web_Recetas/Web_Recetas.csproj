@@ -136,6 +136,9 @@
     <Content Include="Assets\css\ruang-admin.css" />
     <Content Include="Assets\css\ruang-admin.min.css" />
     <Content Include="Assets\font\OFL.txt" />
+    <Content Include="Assets\img\Banners\1.png" />
+    <Content Include="Assets\img\Banners\2.png" />
+    <Content Include="Assets\img\Banners\3.png" />
     <Content Include="Assets\img\boy.png" />
     <Content Include="Assets\img\error.svg" />
     <Content Include="Assets\img\girl.png" />
@@ -145,6 +148,7 @@
     <Content Include="Assets\img\man.png" />
     <Content Include="Assets\img\MENU CHU.png" />
     <Content Include="Assets\img\Menus\Caldo_sopa.jpg" />
+    <Content Include="Assets\img\Menus\cana.jpg" />
     <Content Include="Assets\img\Menus\causa_entrada.jpg" />
     <Content Include="Assets\img\Menus\flan_postre.jpg" />
     <Content Include="Assets\img\Menus\limonada_bebida.jpg" />
