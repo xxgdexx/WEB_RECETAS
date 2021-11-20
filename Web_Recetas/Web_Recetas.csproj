@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngredienteController.cs" />
     <Compile Include="Controllers\RecetaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2264,6 +2265,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Receta\Mantenimiento.js" />
     <Content Include="Scripts\Receta\Receta.js" />
+    <Content Include="Scripts\Receta\Recetas.js" />
     <Content Include="Scripts\Seguridad\Authenticar.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2282,9 +2284,12 @@
     <Content Include="Views\Receta\Index.cshtml" />
     <Content Include="Views\Receta\Mantenimiento.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Ingrediente\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Ingredientes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

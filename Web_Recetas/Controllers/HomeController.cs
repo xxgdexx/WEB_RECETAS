@@ -7,6 +7,7 @@ using Web_Recetas.Models;
 
 namespace Web_Recetas.Controllers
 {
+    
     public class HomeController : Controller
     {
         UsuarioModel model = new UsuarioModel();
@@ -24,6 +25,10 @@ namespace Web_Recetas.Controllers
             return View();
         }
 
+        public ActionResult Register()
+        {
+            return View();
+        }
         public ActionResult Login()
         {
             return View();
