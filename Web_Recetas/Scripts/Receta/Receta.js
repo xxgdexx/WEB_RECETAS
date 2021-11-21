@@ -33,7 +33,8 @@ function ini() {
 
 
 function showOcasion(r) {
-
+    alert("Hola Mundo ");
+    debugger;
     console.log(r);
     
     let rpta = r.data;
@@ -59,20 +60,20 @@ function showOcasion(r) {
                                 <div class="card-body">
                                 `;
             if (lista[i].ID_Categoria == 1) {
-                body += `<img src="./Assets/img/Menus/causa_entrada.jpg" class="img-fluid" style="height: 150px;" />`;
+                body += `<img src="./Assets/img/Menus/causa_entrada.jpg" class="img-fluid" style="height: 150px;" onclick="mostrarCategoria(${lista[i].ID_Categoria});"/>`;
             } else if (lista[i].ID_Categoria == 2) {
-                body += `<img src="./Assets/img/Menus/Caldo_sopa.jpg" class="img-fluid" style="height: 150px;" />`;
+                body += `<img src="./Assets/img/Menus/Caldo_sopa.jpg" class="img-fluid" style="height: 150px;" onclick="mostrarCategoria(${lista[i].ID_Categoria});"/>`;
             } else if (lista[i].ID_Categoria == 3) {
-                body += `<img src="./Assets/img/Menus/lomo_fondo.jpg" class="img-fluid" style="height: 150px;" />`;
+                body += `<img src="./Assets/img/Menus/lomo_fondo.jpg" class="img-fluid" style="height: 150px;" onclick="mostrarCategoria(${lista[i].ID_Categoria});"/>`;
             } else if (lista[i].ID_Categoria == 4) {
-                body += `<img src="./Assets/img/Menus/flan_postre.jpg" class="img-fluid" style="height: 150px;" />`;
+                body += `<img src="./Assets/img/Menus/flan_postre.jpg" class="img-fluid" style="height: 150px;" onclick="mostrarCategoria(${lista[i].ID_Categoria});"/>`;
             } else {
-                body += `<img src="./Assets/img/Menus/limonada_bebida.jpg" class="img-fluid" style="height: 150px;" />`;
+                body += `<img src="./Assets/img/Menus/limonada_bebida.jpg" class="img-fluid" style="height: 150px;" onclick="mostrarCategoria(${lista[i].ID_Categoria});"/>`;
             }
             body+=`
                                 </div>
                             </div>
-                            <button onclick="mostrarCategoria('`+ lista[i].ID_Categoria +`')" class="btn btn-success">Listar</button>
+                            
                         </div>
 
                     </div>
@@ -82,7 +83,7 @@ function showOcasion(r) {
         }
 
     }
-
+    ///*<button onclick="mostrarCategoria('`+ lista[i].ID_Categoria +`')" class="btn btn-success">Listar</button>*/
     $("#rowOcasion").html(body);
 
 }
