@@ -5,8 +5,8 @@ var logout = document.getElementById("logout");
 function axiosCon(t, u, m) {
     var axiosConfig = {
         method: t,
-        url: BaseUrl + u,
-        crossdomain: true,
+        url: BaseUrl+u,
+/*        baseURL:'http://www.servicioapi.somee.com/api/',*/
         //headers: {
         //    "Content-Type": "application/x-www-form-urlencoded",
         //    "Authorization": "Bearer " + localStorage.token
@@ -14,7 +14,7 @@ function axiosCon(t, u, m) {
         headers: {
             'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
-            "Access-Control-Allow-Origin": "*",
+            'Access-Control-Allow-Origin': '*',
             //'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
             //'Access-Control-Allow-Origin': '*'
         },

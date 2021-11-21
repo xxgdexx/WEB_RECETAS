@@ -122,7 +122,7 @@ function listReceta(r) {
                         <div class="col-lg-6 mb-4">
 
                             <div class="card bg-primary text-white">
-                                <div class="card-body">
+                                <div class="card-body text-center">
 `;
                 if ((lista[i].Foto).length > 20) {
                     body += `<img src="` + JSON.parse(lista[i].Foto).base64 + `" class="img-fluid" style="height: 150px;" />`;
