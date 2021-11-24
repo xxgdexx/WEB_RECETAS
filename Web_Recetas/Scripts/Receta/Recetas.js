@@ -124,7 +124,7 @@ function listReceta(r) {
                                 <div class="card-body">
 `;
                 if ((lista[i].Foto).length > 20) {
-                    body += `<img src="` + JSON.parse(lista[i].Foto).base64 + `" class="img-fluid" style="height: 150px;" />`;
+                    body += `<img src="` + lista[i].Foto + `" class="img-fluid" style="height: 150px;" />`;
                 } else {
                     body += `<img src="./Assets/img/MENU CHU.png" class="img-fluid" style="height: 150px;" />`;
                 }
