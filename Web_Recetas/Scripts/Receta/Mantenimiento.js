@@ -172,7 +172,7 @@ function assignValues() {
     });
     console.log(obj);
     obj["ID_Usuario"] = JSON.parse(localStorage.getItem("Usuario")).ID_Usuario;
-    obj["Ingredientes"] = MostrarDetalle();
+    obj["Ingredientes"] = ArrIngredientes();
     return obj;
 }
 
@@ -304,14 +304,23 @@ function restDelete(r) {
     console.log(r);
 }
 
-function MostrarDetalle() {
+function ArrIngredientes() {
     let b_detalle = document.getElementById("b_detalle");
+
     let obj = [];
     for (i = 0; i < b_detalle.childElementCount; i++) {
         let det = b_detalle.children[i];
-
-        for (f = 0; f < det.childElementCount; f++) {
-      
+        let dt = {
+            ID_Ingrediente: det.children[0].textContent,
+            Nombre: det.children[1].textContent,
+            Descripcion: det.children[2].textContent,
+            ID_Tipo_Unidad: det.children[2].id,
+            ID_Receta: det.children[3].textContent,
+            Cantidad: det.children[4].textContent,
         }
+        obj.push(dt);
     }
+
+
+    return obj;
 }
