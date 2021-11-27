@@ -51,7 +51,7 @@ function GetData(controlador, metodo) {
 function Lista(data, combo, obj,select) {
     $("#" + combo + "").html("");
     let str = "";
-    str += `<option value="">` + select + `</option>`;
+    str += `<option value="0">` + select + `</option>`;
     if (data.length > 0) {
         for (i = 0; i < data.length; i++) {
             str += `<option value="` + data[i][obj[0]] + `">` + data[i][obj[1]] + `</option>`;

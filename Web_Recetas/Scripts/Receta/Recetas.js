@@ -1,4 +1,6 @@
-﻿$("#btnListar").click(function () {
+﻿//const { hide } = require("@popperjs/core");
+
+$("#btnListar").click(function () {
     alert("OK");
     debugger;
     let ruta = "https://localhost:44337/api/Receta/GetReceta";
@@ -111,31 +113,30 @@ function listReceta(r) {
             for (i = 0; i < lista.length; i++) {
                 console.log(i);
 
-                body += `<div class="col-lg-6">
+                body += `<div class="col-lg-4">
             <div class="card mb-4">
                 <div class="align-items-center card-header py-3 text-center">
-                    <h6 class="m-0 font-weight-bold text-primary">`+ lista[i].Nombre + `</h6>
+                    <h4 class="font-weight-bold m-0 text-primary text-uppercase">`+ lista[i].Nombre + `</h4>
                 </div>
                 <div class="card-body">
                     <div class="d-flex justify-content-center row">
-                        <div class="col-lg-6 mb-4">
+                        <div class="col-12 mb-4">
 
-                            <div class="card bg-primary text-white">
-                                <div class="card-body">
+                            <div class="card">
+                               
 `;
                 if ((lista[i].Foto).length > 20) {
-                    body += `<img src="` + lista[i].Foto + `" class="img-fluid" style="height: 150px;" />`;
+                    body += `<img src="` + lista[i].Foto + `" class="img-fluid" style="height: 250px;" />`;
                 } else {
-                    body += `<img src="./Assets/img/MENU CHU.png" class="img-fluid" style="height: 150px;" />`;
+                    body += `<img src="./Assets/img/MENU CHU.png" class="img-fluid" style="height: 250px;" />`;
                 }
                 body += `
-                                </div>
                             </div>
                         </div>
                     </div>
                     `;
-                body += `<h3>Preparación</h3>
-                    <p>`+ lista[i].Preparacion + `</p>
+                body += `
+                    <button class="btn btn-block btn-warning font-weight-bold text-dark" onclick="traerPreparacion(${lista[i].ID_Receta})">VER PREPARACIÓN</button>
                 </div>
             </div>
         </div>`;
@@ -165,6 +166,64 @@ function regresar() {
 }
 
 
+function traerPreparacion(id) {
+    axiosCon('GET', 'Receta?id=' + id, mostrarPreparacion);
+}
 
 
+function mostrarPreparacion(r) {
+    let dt = r.data;
 
+    var element = document.getElementById("rowPreparacion");
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+
+    let bdy = ``;
+    if (dt.Resultado == "OK") {
+        let { Lista } = dt;
+
+        console.log(Lista);
+
+        bdy += `<div class="col-12 text-center">
+            <h1 class="display-4 text-uppercase">${Lista[0].Nombre}</h1>
+        </div>
+        <div class="bg-warning rounded col-12 mb-5 px-5 row text-dark">
+            <div class="col-lg-6 py-5">
+              <img  src="${Lista[0].Foto}" class="img-fluid" />
+            </div>
+            <div class="col-lg-6">
+                <div class="col-12 text-center">
+                <h5 class="font-weight-bold mt-5">Ingregientes</h5>
+                </div>
+                <ul>`;
+
+
+        for (i = 0; i < Lista[0].Ingredientes.length; i++) {
+            bdy += `<li class="my-1">${Lista[0].Ingredientes[i].Cantidad} ${Lista[0].Ingredientes[i].Descripcion} de ${Lista[0].Ingredientes[i].Nombre}</li>`;
+        }
+
+        bdy+= `</ul>
+            </div>
+            <div class="col-12 mb-3 ml-4">
+             <h4 class="font-weight-bold">Preparación</h4>
+             <p>${Lista[0].Preparacion}</p>
+            </div>
+            <div class="col-12 mb-4 text-center">
+                <button class="bg-dark btn col-6 font-weight-bolder" style="color: yellow;" onclick="backOne()">REGRESAR</button>
+            </div>
+        </div>
+        `;
+
+        $("#rowReceta").hide(500)
+        $("#rowPreparacion").show(1000);
+
+    }
+    $("#rowPreparacion").html(bdy);
+    console.log(dt);
+}
+
+function backOne() {
+    $("#rowPreparacion").hide(500);
+    $("#rowReceta").show(1000)
+}

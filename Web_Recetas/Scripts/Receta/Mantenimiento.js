@@ -115,6 +115,13 @@ function btnAction(pt,accion) {
             axios.post(BaseUrl + "Receta", assignValues()).then(res => {
                 if (res.data.Resultado === "OK") {
                     Swal.fire('OK', res.data.Mensaje, 'success');
+                    LimpiarCampos();
+                    var element = document.getElementById("b_detalle");
+                    while (element.firstChild) {
+                        element.removeChild(element.firstChild);
+                    }
+                    $("#rowData").hide(500);
+                    $("#rowTable").show(1000);
                 }
                 else {
                     Swal.fire('Error', res.data.Mensaje, 'error');
@@ -123,6 +130,10 @@ function btnAction(pt,accion) {
                 Swal.fire('Error', err.toString(), 'error');
             });
             break;
+
+
+
+        
 
         case 'editar':
             LimpiarCampos();
@@ -143,6 +154,10 @@ function btnAction(pt,accion) {
             break;
         case 'nuevo':
             LimpiarCampos();
+            var element = document.getElementById("b_detalle");
+            while (element.firstChild) {
+                element.removeChild(element.firstChild);
+            }
             $("#rowTable").hide(500);
             $("#rowData").show(1000);
             break;
@@ -220,45 +235,49 @@ function llenarCampos(reg) {
             default:
         }
     });
+
+    let { Ingredientes } = obj;
+    agregarDetalle(Ingredientes);
 }
 
-function agregarDetalle() {
-    let ID_Ingrediente = document.getElementById("ID_Ingrediente");
-    let txtNombre = document.getElementById("txtNombre");
-    let ID_Tipo_Unidad = document.getElementById("ID_Tipo_Unidad");
-    let txtCantidadD = document.getElementById("txtCantidadD");
+function agregarDetalle(Ingredientes) {
 
-    let ID_Receta = document.getElementById("ID_Receta");
-    if (ID_Receta.value == null || ID_Receta.value == '' || ID_Receta.value  == undefined) {
-        ID_Receta.value = 0;
-    }
-    var textSelect = ID_Tipo_Unidad.options[ID_Tipo_Unidad.selectedIndex].text;
-
-    if (ID_Ingrediente.value == null || ID_Ingrediente.value == '' || ID_Ingrediente == undefined) {
-        ID_Ingrediente.value = 0;
-    }
-
-
-    let tbd = document.getElementById("b_detalle");
+    console.log(Ingredientes);
 
     var body = ``;
+    let tbd = document.getElementById("b_detalle");
 
-    console.log(tbd.childElementCount);
-
-    if (ID_Ingrediente.value == 0) {
-        body += `
-        <tr>
-         <th scope="row" class="d-none">${ID_Ingrediente.value}</th>
-         <td>${txtNombre.value}</td>
-         <td id="${ID_Tipo_Unidad.value}">${textSelect}</td>
-         <td class="d-none">${ID_Receta.value}</td>
-         <td>${txtCantidadD.value}</td>
+    if (Ingredientes != undefined) {
+        for (i = 0; i < Ingredientes.length; i++) {
+            body += `<tr>
+         <th scope="row" class="d-none">${Ingredientes[i].ID_Ingrediente}</th>
+         <td>${Ingredientes[i].Nombre}</td>
+         <td id="${Ingredientes[i].ID_Tipo_Unidad}">${Ingredientes[i].Descripcion}</td>
+         <td class="d-none">${Ingredientes[i].ID_Receta}</td>
+         <td>${Ingredientes[i].Cantidad}</td>
          <td class="text-center">
-        <button class="btn btn-danger px-1 py-0 rounded rounded-circle" onclick="actionDetalle('delete',${ID_Ingrediente.value},this)"><i class="fa fa-trash-alt"></i></button>
+        <button class="btn btn-danger px-1 py-0 rounded rounded-circle" onclick="actionDetalle('delete',${Ingredientes[i].ID_Ingrediente},this)"><i class="fa fa-trash-alt"></i></button>
         </td>
         </tr>`;
+        }
     } else {
-        body += `
+        let ID_Ingrediente = document.getElementById("ID_Ingrediente");
+        let txtNombre = document.getElementById("txtNombre");
+        let ID_Tipo_Unidad = document.getElementById("ID_Tipo_Unidad");
+        let txtCantidadD = document.getElementById("txtCantidadD");
+        let ID_Receta = document.getElementById("ID_Receta");
+        if (ID_Receta.value == null || ID_Receta.value == '' || ID_Receta.value == undefined) {
+            ID_Receta.value = 0;
+        }
+        var textSelect = ID_Tipo_Unidad.options[ID_Tipo_Unidad.selectedIndex].text;
+
+        if (ID_Ingrediente.value == null || ID_Ingrediente.value == '' || ID_Ingrediente == undefined) {
+            ID_Ingrediente.value = 0;
+        }
+        console.log(tbd.childElementCount);
+
+        if (ID_Ingrediente.value == 0) {
+            body += `
         <tr>
          <th scope="row" class="d-none">${ID_Ingrediente.value}</th>
          <td>${txtNombre.value}</td>
@@ -269,7 +288,26 @@ function agregarDetalle() {
         <button class="btn btn-danger px-1 py-0 rounded rounded-circle" onclick="actionDetalle('delete',${ID_Ingrediente.value},this)"><i class="fa fa-trash-alt"></i></button>
         </td>
         </tr>`;
+        } else {
+            body += `
+        <tr>
+         <th scope="row" class="d-none">${ID_Ingrediente.value}</th>
+         <td>${txtNombre.value}</td>
+         <td id="${ID_Tipo_Unidad.value}">${textSelect}</td>
+         <td class="d-none">${ID_Receta.value}</td>
+         <td>${txtCantidadD.value}</td>
+         <td class="text-center">
+        <button class="btn btn-danger px-1 py-0 rounded rounded-circle" onclick="actionDetalle('delete',${ID_Ingrediente.value},this)"><i class="fa fa-trash-alt"></i></button>
+        </td>
+        </tr>`;
+        }
+
+        ID_Ingrediente.value = 0;
+        txtNombre.value = "";
+        txtCantidadD.value = "";
+        ID_Tipo_Unidad.value = 0;
     }
+   
    
 
     
@@ -308,18 +346,21 @@ function ArrIngredientes() {
     let b_detalle = document.getElementById("b_detalle");
 
     let obj = [];
-    for (i = 0; i < b_detalle.childElementCount; i++) {
-        let det = b_detalle.children[i];
-        let dt = {
-            ID_Ingrediente: det.children[0].textContent,
-            Nombre: det.children[1].textContent,
-            Descripcion: det.children[2].textContent,
-            ID_Tipo_Unidad: det.children[2].id,
-            ID_Receta: det.children[3].textContent,
-            Cantidad: det.children[4].textContent,
+    if (b_detalle.childElementCount>0) {
+        for (i = 0; i < b_detalle.childElementCount; i++) {
+            let det = b_detalle.children[i];
+            let dt = {
+                ID_Ingrediente: det.children[0].textContent,
+                Nombre: det.children[1].textContent,
+                Descripcion: det.children[2].textContent,
+                ID_Tipo_Unidad: det.children[2].id,
+                ID_Receta: det.children[3].textContent,
+                Cantidad: det.children[4].textContent,
+            }
+            obj.push(dt);
         }
-        obj.push(dt);
     }
+   
 
 
     return obj;
