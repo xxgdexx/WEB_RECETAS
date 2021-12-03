@@ -12,8 +12,8 @@
     <div class="col-12">
         <div class="card px-2 py-4">
             <div class="col-12 row">
-                <h4 class="col-6 text-left">Lista de Menus</h4>
-                <div class="col-6 text-right">
+                <h4 class="col-md-6 text-left">Lista de Menus</h4>
+                <div class="col-md-6 text-right">
                     <button class="btn btn-primary waves-effect waves-light mb-3" onclick="btnAction(this,'nuevo')"><i class="md md-add"></i> Nuevo Menu</button>
                 </div>
             </div>
@@ -46,21 +46,21 @@
             </div>
             <div class="card-body row col-12">
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="ID_Receta" class="col-sm-3 col-form-label">ID_Receta</label>
                     <div class="col-sm-9">
                         <input type="tel" class="form-control cf" data-field="ID_Receta" id="ID_Receta" disabled readonly>
                     </div>
                 </div>
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="Nombre" class="col-sm-3 col-form-label">Nombre Receta</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control cf" data-field="Nombre" id="Nombre" placeholder="Nombre de Receta">
                     </div>
                 </div>
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="Descripcion" class="col-sm-3 col-form-label">Descripcion</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control cf" data-field="Descripcion" placeholder="Escribir una breve descripcion">
@@ -68,36 +68,36 @@
                 </div>
 
                 <div class="form-group row col-12">
-                    <label for="Preparacion" class="col-form-label col-sm-1 pr-0">Preparacion</label>
-                    <div class="col-sm-10 ml-5">
-                        <textarea type="text" class="form-control cf" data-field="Preparacion" placeholder="Escribir la preparación a detalle" />
+                    <label for="Preparacion" class="col-form-label col-md-1 pr-0">Preparacion</label>
+                    <div class="col-md-10 ml-5">
+                        <textarea type="text" class="form-control cf" data-field="Preparacion" placeholder="Escribir la preparación a detalle" style="height:150px;" />
                     </div>
                 </div>
 
 
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="Tips" class="col-sm-3 col-form-label">Tips</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control cf" data-field="Tips" placeholder="Tips de la receta">
                     </div>
                 </div>
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="CantidadPersonas" class="col-sm-3 col-form-label">Para:</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control cf" data-field="CantidadPersonas" placeholder="Para cuantas personas">
                     </div>
                 </div>
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="TiempoPreparacion" class="col-sm-3 col-form-label">Tiempo</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control cf" data-field="TiempoPreparacion" placeholder="Tiempo de Preparacion">
                     </div>
                 </div>
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="UrlVideo" class="col-sm-3 col-form-label">UrlVideo</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control cf" data-field="UrlVideo" placeholder="Enlace de video">
@@ -105,14 +105,14 @@
                 </div>
 
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="ID_Categoria" class="col-sm-3 col-form-label">Categoria</label>
                     <div class="col-sm-9">
                         <select class="form-control cf" id="ID_Categoria" data-field="ID_Categoria"></select>
                     </div>
                 </div>
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="ID_Dificultad" class="col-sm-3 col-form-label">Dificultad</label>
                     <div class="col-sm-9">
                         <select class="form-control cf" id="ID_Dificultad" data-field="ID_Dificultad"></select>
@@ -123,7 +123,7 @@
                 </div>
 
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="ID_Estilo" class="col-sm-3 col-form-label">Estilo</label>
                     <div class="col-sm-9">
                         <select class="form-control cf" id="ID_Estilo" data-field="ID_Estilo"></select>
@@ -131,7 +131,7 @@
                 </div>
 
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="ID_Ocasion" class="col-sm-3 col-form-label">Ocasion</label>
                     <div class="col-sm-9">
                         <select class="form-control cf" id="ID_Ocasion" data-field="ID_Ocasion"></select>
@@ -139,14 +139,14 @@
                 </div>
 
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="Foto" class="col-sm-3 col-form-label">Foto</label>
                     <div class="col-sm-9">
                         <button type="button" id="btn-foto" class="btn btn-block btn-primary">Subir Imagen</button>
                     </div>
                 </div>
 
-                <div class="form-group row col-6">
+                <div class="form-group row col-md-6">
                     <label for="Foto" class="col-sm-3 col-form-label">Ingredientes</label>
                     <div class="col-sm-9">
                         <button type="button" id="btn-foto" class="btn btn-block btn-primary" data-toggle="modal" data-target="#exampleModal">Modal</button>
@@ -187,13 +187,13 @@
                         <div class="d-none">
                             <input id="ID_Ingrediente" class="tf" />
                         </div>
-                        <div class="form-group row col-6">
+                        <div class="form-group row col-md-6">
                             <label for="Nombre" class="col-sm-3 col-form-label">Nombre</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control tf" id="txtNombre"  placeholder="Nombre de ingrediente">
                             </div>
                         </div>
-                        <div class="form-group row col-6">
+                        <div class="form-group row col-md-6">
                             <label for="Unidad" class="col-sm-3 col-form-label">Unidad</label>
                             <div class="col-sm-9">
                                 <select class="form-control tf" id="ID_Tipo_Unidad"></select>
@@ -202,13 +202,13 @@
                     </div>
 
                     <div class="d-flex justify-content-around">
-                        <div class="form-group row col-6">
+                        <div class="form-group row col-md-6">
                             <label for="Cantidad" class="col-sm-3 col-form-label">Cantidad</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control tf" id="txtCantidadD" placeholder="Enlace de video">
                             </div>
                         </div>
-                        <div class="col-6 h-25 justify-content-end pr-4 py-1 row">
+                        <div class="col-md-6 h-25 justify-content-end pr-4 py-1 row">
 
                             <button type="button" class="btn btn-block btn-primary col-8" onclick="agregarDetalle()">Agregar</button>
 

@@ -20,5 +20,10 @@ namespace Web_Recetas.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult Entrantes()
+        {
+            return PartialView();
+        }
     }
 }
